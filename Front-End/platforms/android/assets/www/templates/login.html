@@ -1,0 +1,92 @@
+  <!-- Hide Nav Bar -->
+<style>
+ h1 {font-size:4vmin;float:left;width:100%;line-height:.7;z-index:-1000;font-weight:300;
+ 
+}
+</style>
+
+<ion-view class="flarebackground88" ng-init="accessorylogin()">
+
+<!--
+<img style="height:100%;min-width:100%;position:absolute;left:-38%;opacity:.88" src="img/splash.jpg">
+
+-->
+  
+<ion-content padding has-bouncing="false" overflow-scroll='false'>
+
+<!--{{error}}-->
+<br>
+   <div class="padding" style="text-align:right;padding-right:30px">
+      <h1 style="color:white;font-size:8.9vh;padding-top:3vh;padding-bottom:7vh;padding-left:2vw;margin-bottom:0px;">Phone<strong>Flare</strong></h1>
+    
+</div>
+
+    
+  <ion-item style="padding-bottom:0px !important;background:transparent !important;padding-top:2vh">
+
+    <span class="input-label" style="color:white;font-size:7vmin"><b>Email</b></span>
+    <input on-return="emailreturn()" type="text"
+    style="background-color:transparent;color:white;padding-left:20px;margin-bottom:3vh;padding-top:4vh;font-size:6.5vmin;line-height:8vmin;width:100%"
+     name="email"
+     ng-model="credentials.email"
+     placeholder="email@school.edu"
+     >
+  </ion-item>
+  <ion-item style="padding-bottom:0px !important;background:transparent !important;padding-top:2vh">
+    <span class="input-label" style="color:white;font-size:7vmin;padding-top:2vh;padding-bottom:4vh"><b>Password</b></span>
+    <input id="passinput" on-return="passwordreturn()" type="password"
+     style="background-color:transparent;color:white;padding-left:21px;margin-bottom:14px;margin-top:-5px;font-size:7vmin;line-height:6vmin"
+     name="password"
+     ng-model="credentials.password"
+     placeholder="*******"
+     >
+  </ion-item>
+   <div ng-if="!reg" style="text-align:center;padding-top:4vh" ng-cloak>
+    <button ng-click="login()" style="min-width:85%;min-height:9vh !important" class="button button-positive button-large">
+     <b style="font-size:5.5vmin"> Login </b>
+    </button>
+
+    <div style="padding-top:3vh">
+  <button class="button button-balanced" ng-click="regToggle()">
+  <b>Need to Register?</b></button>
+  </div>
+    
+
+</div>
+    <!-- -->
+<div ng-if="reg" style="text-align:center;padding-top:4vh" ng-cloak> 
+    <button ng-click="register()" style="min-width:85%;min-height:9vh !important" class="button button-positive button-large">
+      <b style="font-size:5.5vmin">Register</b>
+    </button>
+<br>
+     <br>
+     <!--
+     <div style="text-align:center">
+       <button class="button button-royal" ng-click="notastudent()">
+  <b>Not a student?</b></button>
+-->
+  <button class="button button-balanced" ng-click="regToggle()">
+  <b>Have a login?</b></button>
+  </div>
+  </div>
+<!--//////////////////////-->
+
+
+<!--
+<div class="padding" style="text-align:center;font-size:10px;line-height:10px">PhoneFlare is a non-profit, philanthropic experiment. We hope it can be a useful tool, but are not responsible or liable whatsoever for any malfunctions or errors.</div>
+-->
+<!--
+<div style="text-align:center">
+  <a href="tel:+1-911" >
+  <button class="button button-positive" ng-click="regToggle()">
+  Emergency? 911</button>
+  </a>
+  </div>
+  -->
+  
+<div class="padding" style="text-align:center;font-size:10px;line-height:10px" ng-click="faq()">PhoneFlare is a <b>non-profit</b>, philanthropic experiment. We hope it can be a useful tool, but are not responsible or liable <b>whatsoever</b> for any malfunctions or errors. <b>Questions?</b> Check out or <b>FAQ</b> page!</div>
+
+  </ion-content>
+
+
+</ion-view>

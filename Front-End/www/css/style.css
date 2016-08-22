@@ -1,0 +1,329 @@
+.flarebackground15{
+background-image: url(../img/15.jpg);
+   background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.higher_popup{
+margin-top:-20vh !important;
+}
+
+.platform-android .bar .title {
+  padding-left:50px !important;
+}
+
+#map {
+  width: 86%;
+  height: 50%;
+}
+
+.slider{height:100% !important;}
+.ion-record{font-size:16px} 
+.slider-slide{padding-top:0px !important;}
+.slider-pager{bottom:60px !important}
+#backbutton>.button.button-icon:before{font-size:27px !important}
+
+.loading{background:transparent !important}
+.backdrop{background:transparent !important}
+.spinner-ios{stroke:#ccdcf3;}
+.spinner{fill:#ebebeb;}
+.applelinks a{
+
+  color: #ffffff !important; text-decoration: none; 
+}
+
+.item-radio{
+  color:black !important;
+}
+
+.popup-title{
+  font-size:19px;
+}
+.popup-sub-title{
+  font-size:12px;
+}
+
+.checkinbck{
+  background-color: rgba(255,255,255,.4) !important;
+}
+/* iPHONE
+.popup-body{
+  padding-top:0px;
+}
+*/
+.flarebackground88{
+background-image: url(../img/88.jpg);
+   background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.flarebackground45{
+background-image: url(../img/45.jpg);
+   background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.flarebackground23{
+background-image: url(../img/23.jpg);
+   background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.onealarm{padding-top:10vh !important;opacity:.5 !important;}
+
+.arm::before{content: "arm";font-weight:bold;color:rgb(48,109,119);}
+
+.disarm::before{content: "disarm";font-weight:bold;font-size:13vmin}
+
+.item-content{ padding-right:0px !important}
+.item-note{font-size:20px !important}
+select{background:transparent !important}
+
+.bar,.title{
+  font-size:23px !important;
+}
+
+.slider-pager-page, .slider-page, span.slider-pager-page
+{
+ color: #FFF !important;
+ padding-top:18px;
+}
+a.item-content{
+  background-color: rgba(0,0,0,0) !important;
+  color:white;
+
+}
+.item:not(.item-divider) {
+  background-color: rgba(0,0,0,.05) !important;
+  color:white;
+};
+
+
+
+/*
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+*/
+.title{font-size:24px !important;}
+
+#emergency_wrapper{position:absolute;bottom:10vh;z-index:200;width:100vw;text-align:center;left:0;}
+
+#emergency_text{position:absolute;bottom:7vh;z-index:200;width:100vw;text-align:center;left:0;}
+
+#countdowntimer{text-align:center;opacity:.8;padding-top:2em;padding-bottom:.3em;}
+#passcode_input{text-align:center !important;left:0 !important}
+#loginlist .item{background-color:transparent !important}
+
+#alarmlist .item{background-color:transparent;padding-top:25px;padding-bottom:3px;}
+#alarmlist > .list > .item{border-bottom:gray 2px dotted !important;};
+
+
+
+
+
+.contacttoggles::before{font-size:40px !important;padding-top:.2em !important;font-weight:900 !important;} 
+.item-image{max-width:55px !important; max-height:55px !important; top:7px !important;}
+#MenuLogin > .item-image {max-width:140px !important ;max-height:140px !important;}
+.toggle-off{opacity:.3 !important;}
+
+
+
+.slider {
+  height: 80%;
+}
+.slider-slide {
+  padding-top: 40px;
+  text-align: center;
+}
+
+.icon {
+  width:100px !important;
+
+}
+
+.bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before{
+
+  line-height:27px !important;
+}
+
+h2 {font-size:7vmin !important};
+h3 {}
+
+/* Rewriting SASS ------------------------------/*
+
+.ng-binding {color:black !important;}
+.row {color:black !important;}
+
+
+i {color:gray !important;}
+span {color:gray !important;}
+body {color:gray !important;}
+
+
+
+h1 {color:gray !important;}
+h2 {color:white !important;}
+h3 {color:white !important;}
+h4 {color:white !important;}
+h5 {color:white !important;}
+h6 {color:white !important;}
+p {color:white !important;}
+
+/* iOS look CSS ----------------------------------*/ 
+
+.item {border:none !important;
+ box-shadow: 30px 30px 30px transparent;
+
+}
+
+
+.menu-bar {
+
+background-color: rgba(255,100,100,.85) !important;
+/*
+ background-color: rgba(255,160,90,.7) !important;
+  /*
+ background:none !important;
+/* 
+  box-shadow: 0px 30px 200px white;
+*/ 
+}
+
+.armedmenu {background-color: rgba(0,255,0,1) !important;}
+
+.menuupperleft {background-color: rgba(230,100,98,1) !important}
+
+.item-divider {background-color: rgba(150,150,150,.4);color:white}
+
+.menulist {
+
+  /* background-color: rgba(80,80,80,1); */
+  background-color: rgba(80,80,80,1);
+  
+ 
+}
+
+.alarmlist {
+  background-color: rgba(255,255,255,0) !important;
+  margin-top:0em !important;
+  margin-bottom:0em !important;
+
+
+}
+
+.contactlist {
+  background-color: rgba(255,255,255,0) !important;
+  margin-top:0em !important;
+  margin-bottom:0em !important;
+  border-bottom:gray 2px dotted !important;
+
+
+}
+
+
+.tabs-bar .tab-nav.tabs{
+  background-color: rgba(255,100,100,.85) !important;
+  
+  
+  /*
+    box-shadow: 0px 0px 100px white;
+    */ 
+}
+
+.item-content > img:first-child {
+
+  top: 4px !important;
+max-width: 70px !important;
+max-height: 70px !important;
+
+}
+
+.menubar{
+  font-size:1.2em !important;
+  color:white !important;
+}
+
+body {color:white !important;}
+h1 {color:white !important;}
+h2 {color:white !important;}
+h3 {color:white !important;}
+h4 {color:white !important;}
+h5 {color:white !important;}
+h6 {color:white !important;}
+p {color:white !important;}
+
+/*
+.debug {
+
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(300px);
+    -o-filter: blur(300px);
+    -ms-filter: blur(300px);
+    filter: blur(300px);
+   
+}
+
+*/ 
+.spinner svg {
+  width: 19% !important;
+  height: 1000px !important;
+}
+
+.timePickerColon {
+  padding-top: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.timePickerArrows {
+  width: 100%;
+}
+
+.timePickerBoxText {
+  text-align: center;
+  border: 1px solid #dddddd !important;
+}
+
+.bar.bar-stable, .tabs {
+  box-shadow: 0 0 5px #555;
+}
+
+.overflowShow {
+  white-space: normal !important;
+}
+
+
+
+.popup-head{
+  background-color:rgba(220,70,70,.85);
+}
+
+
+
+/*
+.bac, .pane  {
+
+	background:url(b.png);
+	background-attachment:fixed;
+    background-position: right;
+  
+}
+
+ .pane .menu, .view, .list, .item       {
+   
+}
+
+
+/*
+ NAVBAR
+.bar.nav-bar {
+background:none
+}
+
+
+

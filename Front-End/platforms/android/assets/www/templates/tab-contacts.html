@@ -1,0 +1,125 @@
+<style>
+
+#contactsview .ng-binding{padding-left:1.2em;}
+#contactsview .item-content{
+
+  background-color: rgba(255,255,255,0) !important;
+  padding-top:1.2em !important;
+  padding-bottom:0em !important;
+}
+
+  .item img {
+  height: 65px;
+  width: 65px;
+  float: left;
+  margin-top: 10px;
+  margin-right: 10px;
+
+}
+</style>
+    <ion-nav-bar class="bar-positive menu-bar">
+<ion-nav-title>
+      Contacts
+    </ion-nav-title>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-large button-icon button-clear ion-navicon-round" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+  
+      <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-plus-round " ng-click="pluscontact()">
+        </button>
+      </ion-nav-buttons>
+
+    </ion-nav-bar>
+
+
+<ion-view view-title="Contacts" id="contactsview" class="flarebackground45">
+
+     
+
+<!--
+<div style="padding-top:100px;margin-left:-40px">
+<i class = "ion-person-stalker" style="font-size:500px;opacity: 0.1;"></i>
+</div>
+-->
+
+<ion-content class="has-header">
+<!--
+  <a ui-sref="login">
+    Login
+  </a>
+-->
+
+<div ng-if="nocontacts" style="text-align:center;padding-top:60px" ng-cloak ng-class="{'animated fadeInDown': animation}">
+
+<span style="font-size:20px">
+Welcome to
+</span>
+      <h1 style="color:white;font-size:8.8vh;padding-top:1vh;padding-left:2vw;margin-bottom:6vh;">Phone<strong>Flare</strong></h1>
+
+<div class="padding" style="font-size:24px;line-height:30px" ng-click="pluscontact()">
+       <span class="button-icon ion-plus-round animated pulse infinite" style="font-size:30px"></span> Add a contact to get started
+
+      <br>
+
+</div>
+
+<div style="text-align:center;padding-top:9vh">
+  <button class="button button-large button-balanced ion-social-youtube-outline" ng-click="infobutton()">
+  <b>Tutorial</b></button>
+
+
+
+</div>
+
+
+ </div>
+
+
+  <ion-list>
+      <ion-item class="item-avatar item-icon-right contactlist" style="padding-top:1vh;padding-bottom:2vh " ng-repeat="contact in contacts">
+      <!--<ion-toggle>-->
+
+      <!-- Comment Out Photos for now
+      <img ng-src="{{contact.photo}}" class="item-image" style="margin-top:0px;z-index:3000">
+      -->
+      
+     <span style="position:absolute;top:-4px;left:18px;z-index:-300">
+     
+      <ng-letter-avatar data="{{contact.name}}" shape="round" style="width:70px !important"></ng-letter-avatar>
+   
+ </span>
+ <div style="margin-top:-.4vmin">
+        <span style="font-size:6.4vmin;color:white">{{contact.name | expfirst}}<b style="padding-left:0px;color:white">{{contact.name | explast}}</b></span>
+           <h3 class="applelinks" style="padding-left:10vmin;font-size:4.4vmin">{{contact.phone | tel}}</h3>
+           <!-- </ion-toggle>-->
+<a style="color:white" href="tel:+1-{{contact.phone}}">
+  <i ng-if="contact.name.length<16" style="font-size:22px;padding-left:18%" class="icon ion-chevron-right"></i></a>
+      <!-- -->
+  </div>
+
+
+        <ion-option-button class="button-assertive" ng-click="remove(contact)">
+          Delete
+        </ion-option-button>
+       
+       <!--
+	<i class="icon ion-chevron-right icon-accessory"></i>
+-->
+        
+      </ion-item>
+    </ion-list>
+   <div ng-if="contacts.length>0 && contacts.length<4" style="padding-left:5vmin;padding-right:5vmin;font-size:3vmin;line-height:4vmin;padding-top:10px;opacity:.9">
+
+
+Your <b>PhoneFlare</b> contacts will be texted a temporary link to your updated position when you're in danger.
+
+
+</div>
+
+</ion-view>
+  </ion-content>
+</ion-view>
+

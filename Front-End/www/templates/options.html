@@ -1,0 +1,206 @@
+<!--Author @ccj242 - Christopher Cinq-Mars Jarvis -->
+
+    <ion-nav-bar class="bar-positive menu-bar">
+<ion-nav-title>
+      Options
+    </ion-nav-title>
+
+      <ion-nav-buttons id="backbutton" side="left">
+        <button style="text-align:left" ng-click="back()" class="button button-icon icon ion-chevron-left" > </button>
+      </ion-nav-buttons>
+  
+      <ion-nav-buttons side="right">
+        <button ng-click="infobutton()" class="button button-icon button-clear ion-information-circled" ng-click="socialsharing()">
+        </button>
+      </ion-nav-buttons>
+
+    </ion-nav-bar>
+
+    <ion-view title="Options" class="flarebackground23">
+    
+    <ion-content has-header="true" class="options has-header" scroll="true" has-bouncing="false">
+
+
+ 
+<!--
+  <div class="item item-divider">
+    Account
+  </div>
+    <label class="ion-at item item-input">
+  <span class="input-label">Email</span>
+  <input type="email">
+</label>
+
+<label class="item item-input ion-ios-person">
+  <span class="input-label">Name</span>
+  <input type="text">
+</label>
+
+-->
+ <div class="item item-divider">
+    <b>Emergency Settings</b> <span ng-click="emerinfo()" style="z-index:9999" class="icon ion-information-circled"></span>
+  </div>
+<div>
+  <li class="item item-toggle ion-android-bulb" style="padding-bottom:2vh;padding-top:2vh">
+     SOS Torch
+     <label class="toggle">
+       <input type="checkbox" ng-change="torchwarn()" ng-model="global.torch">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+     <br>
+     <span style="font-size:10px">
+       Your phone flahses the 'SOS' signal
+       </span>
+  </li>
+</div>
+<div>
+  <li class="item item-toggle ion-volume-high" style="padding-bottom:2vh;padding-top:1vh">
+     Audio Alarm
+     <label class="toggle">
+       <input type="checkbox" ng-model="global.audioalarm" ng-change="alarmpref()">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+      <br>
+     <span style="font-size:10px">
+       Audible Alarm during emergencies
+       </span>
+  </li>
+</div>
+<div>
+  <li class="item item-toggle ion-mic-a" style="padding-bottom:2vh;padding-top:1vh">
+     Record Audio
+     <label class="toggle">
+       <input type="checkbox" ng-model="global.audiorec" ng-change="recpref()">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+     <br>
+     <span style="font-size:10px">
+       Records and saves audio to your phone
+       </span>
+  </li>
+
+  
+
+</div>
+  <div class="item item-divider">
+    <b>Advanced </b><span ng-click="multiinfo()" style="z-index:9999" class="icon ion-information-circled"></span>
+  </div>
+<div>
+
+  <li class="item item-toggle" style="padding-bottom:2vh;padding-top:2vh">
+     MultiColor Disarm 
+     <label class="toggle">
+       <input type="checkbox" ng-model="global.MCdisarm" ng-change="multicolorselect()">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+     <br>
+     <span style="font-size:10px">
+       Lets you trigger silent emergencies and verifies identity  
+       </span>
+  </li>
+
+   <li class="item item-toggle" ng-show="global.edu"  style="padding-bottom:2vh;padding-top:1vh">
+     Notify Campus Safety
+     <label class="toggle">
+       <input type="checkbox" ng-model="global.campuscall" ng-change="dispatchalert()">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+     <br>
+     <span style="font-size:10px">
+       Calls Campus Safety during emergencies if available  
+       </span>
+  </li>
+
+</div>
+
+ <div class="item item-divider " on-long-press="udidemail()">
+    <b>Account</b> <span style="z-index:9999" class="icon ion-bluetooth"></span>
+  </div>
+
+
+
+<li class="item" ng-click="passwordupdate()" style="padding-bottom:2vh;padding-top:2vh">
+    Change Password
+    <i style="font-size:22px;padding-left:50%" class="icon ion-chevron-right"></i>
+
+</li>
+
+<!--
+<li class="item" ng-click="popupforgetpass()">
+    Forgot Password?
+
+   <i style="font-size:22px;padding-left:50%" class="icon ion-chevron-right"></i>
+</li>
+
+ on-long-press="onlongstart()" on-touch-end="onlongend()"
+-->
+<li class="item" ng-click="logout()" on-long-press="lspurge()">
+  <div style="text-align:center">
+      <button style="margin-top:0px"class="button button-positive button-full"><b>Logout</b></button>
+</div>
+</li>
+  <!--
+  <div class="item item-divider">
+    Contact Us
+  </div>
+<button class="button button-full button-royal" ng-click="test()">
+Contact? Media? etc...
+</button>
+-->
+<!--
+<br>
+
+    <label class="item item-input item-select">
+    <div class="input-label">
+      Message Send Delay
+    </div>
+    <select>
+    <option>immediate</option>
+      <option>5 seconds</option>
+      <option selected>8 seconds</option>
+      <option>15 seconds</option>
+    </select>
+  </label>
+
+   <label class="item item-input item-select">
+    <div class="input-label">
+      Message Resend Interval
+    </div>
+    <select>
+    <option selected>Every Minute</option>
+      <option>Every 2 minutes</option>
+      <option>Every 5 minutes</option>
+    </select>
+  </label>
+
+
+
+ <button class="button button-full button-balanced" ng-click="save()">
+ 
+Save Changes
+</button>
+  -->
+<!--
+  <div style="text-align:center;padding-top:9vh">
+  <button class="button button-balanced" ng-click="infobutton()">
+  Logout</button>
+
+
+
+</div>
+-->
+      </ion-content>
+
+  </ion-view>
+
+

@@ -1,0 +1,206 @@
+<style>
+
+#checkinview .ng-binding{padding-left:1.2em;}
+#checkinview .item-content{
+
+  background-color: rgba(255,255,255,0) !important;
+  padding-top:.5em !important;
+  padding-bottom:.2em !important;
+}
+
+</style>
+
+<ion-nav-bar class="bar-positive menu-bar">
+<ion-nav-title>
+      Check-In
+    </ion-nav-title>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-large button-icon button-clear ion-navicon-round" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+  
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-plus-round" ng-click="addalarm()">
+        </button>
+      </ion-nav-buttons>
+
+    </ion-nav-bar>
+
+
+<ion-view view-title="Check-In" id="checkinview" class="flarebackground15" ng-init="accessorycheckin()">
+<!--
+<img style="height:100%;min-width:100%;position:absolute;left:-38%;opacity:.15" src="img/splash.jpg">
+-->
+
+     
+<div class="animated tada">
+<i class = "ion-ios-time-outline" style="font-size:500px;opacity: 0.15;"></i>
+</div>
+
+    <ion-content class="has-header" has-header="true">
+<!--
+    <ion-slide-box show-pager="true">
+
+
+  <ion-slide>
+  <br><br><br><br>
+
+
+<div id="countdowntimer">
+<h1 style="font-size:50px">
+{{Math.floor(alarmlength / 3600)}}hr {{Math.floor(Math.floor(alarmlength / 60) - Math.floor(alarmlength / 3600)*60)}}min {{Math.floor(alarmlength - Math.floor(alarmlength / 60)*60)}}sec
+</h1>
+</div>
+
+ -->
+<div ng-switch on="alarms.length">
+ <div  ng-switch-when="0" ng-cloak>
+<br><br>
+<div class="animated fadeInDown" style="font-size:13vmin !important;text-align:center;padding-top:10vmin;padding-bottom:6vh">
+No <b>Alarms</b>
+</div>
+<br> 
+
+
+<!--
+ <div style="text-align:center;padding-top:9vh">
+  <button class="button button-balanced" ng-click="contactTutorial()">
+  <b>Tutorial</b></button>
+
+ </div>
+-->
+</div>
+ </div>
+
+
+
+<ion-list id="alarmlist"> 
+      <ion-item ng-repeat="alarm in alarms" ng-click="editAlarm($index)">
+
+      <ion-span style="font-size:42px;color:white;padding-left:25px;margin-right:0px">
+  <!--    class="ion-android-alarm-clock"-->
+
+	{{alarm.end | date: 'h:mm'}}
+<b style="font-size:22px;padding-left:0px;padding-right:0px">
+  {{alarm.end | date: 'a'}}
+</b>
+
+
+    <!-- -->
+    <span style="font-size:20px">
+  {{alarm.end | date: 'EEE'}}
+    </span>
+    <span style="font-size:16px;padding-left:4px;padding-right:0px;font-weight:bold">
+  {{alarm.end | date: 'M'}}/{{alarm.end | date: 'dd'}}
+
+</span>
+
+<!-- -->
+      
+      </ion-span>
+
+      <ion-option-button class="button-assertive" ng-click="remove(alarm)">
+        Delete
+      </ion-option-button>
+
+       <i class="text-align:right;icon ion-chevron-right" style="position:relative;bottom:5px;float:right;padding-right:17px;font-size:15px;color:white;opacity:.5"></i>
+
+        
+      </ion-item>
+    </ion-list>
+
+<div ng-show="alarms.length<3" style="font-size:6.5vmin;line-height:6.5vmin;padding-top:4vh;padding-left:5vmin" ng-class="{'onealarm': alarms.length>0}">
+Add a time you would like to check back in with <b>PhoneFlare</b> by hitting the <b style="font-size:8vmin">+</b> button. If you fail to check-in within a 5 minute grace period, your contacts will be reached.
+
+<div ng-if="bluetoothdisabled" ng-click="bluetoothprompt()" style="font-size:3.5vmin;padding-top:6vh;text-align:center" class="animated pulse" ng-cloak> Enable <span style="font-size:4vmin" class="ion-bluetooth"></span> for <b>UDID logging</b> during emergencies</div>
+
+ </div>
+      <!--
+  
+       
+        
+        <ion-toggle ng-repeat="item in settingsList"
+                    ng-model="item.checked" 
+                    ng-checked="item.checked">
+          {{ item.text }}
+        </ion-toggle>
+        
+        <div class="item">
+          <pre ng-bind="settingsList | json"></pre> 
+        </div>
+        
+        
+        
+
+        
+      
+       </ion-list>
+ 
+        <ion-toggle ng-model="pushNotification.checked"
+                    ng-change="pushNotificationChange()">
+          Push Notificfdas
+        </ion-toggle>
+        
+        <div class="item">
+          <pre ng-bind="pushNotification | json"></pre> 
+        </div>
+        
+        <ion-toggle toggle-class="toggle-assertive"
+                    ng-model="emailNotification"
+                    ng-true-value="Subscribed"
+                    ng-false-value="Unubscribed">
+          Newsletter
+        </ion-toggle>
+
+
+</ion-slide>
+
+
+ <ion-slide>
+   <br><br><br><br>
+  <label class="item item-input item-select">
+    <div class="input-label">
+
+    
+    Time (multiple dropdowns?)
+      
+
+    <select>
+      <option>Never</option>
+      <option>Daily</option>
+      <option selected>Weekdays</option>
+      <option>Weekends</option>
+      <option>MWF</option>
+    </select>
+</div>
+
+
+  </label>
+
+
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+   
+    Repeat
+      
+    </div>
+
+    <select>
+      <option>Never</option>
+      <option>Daily</option>
+      <option selected>Weekdays</option>
+      <option>Weekends</option>
+      <option>MWF</option>
+    </select>
+  </label>
+
+<button id="armbutton" ng-click="showActionsheet()" class="button button-full button-calm">
+Set
+</button>
+</ion-slide>
+
+-->
+  </ion-content>
+</ion-view>

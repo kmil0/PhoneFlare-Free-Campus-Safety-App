@@ -1,0 +1,1 @@
+// Generate your own lb-services using this guide: https://docs.strongloop.com/display/public/LB/AngularJS+JavaScript+SDK

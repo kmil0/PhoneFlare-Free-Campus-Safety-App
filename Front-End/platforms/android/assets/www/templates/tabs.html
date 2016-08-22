@@ -1,0 +1,36 @@
+<ion-tabs class="tabs-icon-top tabs-positive tabs-bar" ng-init="initfunc()"> <!---->
+<!--tabs-color-active-light-->
+  <!-- Tether Tab -->
+
+  <ion-tab title="tether" icon-off="ion-ios-wineglass-outline" icon-on="ion-ios-wineglass" href="#/tab/tether">
+    <ion-nav-view name="tab-tether"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Check-In Tab -->
+
+  <ion-tab title="check-in" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/checkin">
+    <ion-nav-view name="tab-checkin"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Contacts Tab -->
+  <ion-tab title="contacts" icon-off="ion-ios-people-outline" icon-on="ion-ios-people" href="#/tab/contacts">
+    <ion-nav-view name="tab-contacts"></ion-nav-view>
+  </ion-tab>
+
+
+<div ng-if="!emershowcont">
+<div id="emergency_text" style="font-size:12px; color:white; opacity:.9"> Need at least one contact to begin </div>
+</div> 
+
+<div ng-if="emershowcont">
+<!--Floating Button-->
+<div id="emergency_wrapper">
+<button id="emergency" class="button icon button-clear button-large ion-drag" style="color:white; opacity:.7" on-swipe-up="showConfirm()"></button>
+</div>
+<div id="emergency_text" style="font-size:10px; color:white; opacity:.9" on-swipe-up="showConfirm()"> Swipe up for Emergency </div>
+</div> 
+
+
+
+
+

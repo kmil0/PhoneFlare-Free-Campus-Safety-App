@@ -1,0 +1,43 @@
+  <!-- Hide Nav Bar -->
+
+<ion-view hide-nav-bar="true" ng-init="mapinit()" scroll="false">
+
+<div id="backbutton" style="position:absolute;padding:7%;z-index:9999">
+<button ng-click="back()" style="text-align:left;margin-top:-2vh;z-index:9999" class="button button-large menubar button-icon icon ion-chevron-left"></button>
+</div>
+<div id="backbutton" style="position:absolute;right:0vmin;z-index:9999;padding:7%">
+<button ng-click="gpsfeedback()" style="text-align:right;margin-top:-1.3vh;z-index:9999;color:rgb(231, 147, 132) !important" class="button button-large menubar button-icon ion-bug"><!--report error--></button>
+</div>
+
+<div style="position:absolute;left:29vmin;z-index:-9999">
+  <img src="img/1.png" style="width:45vmin;opacity:.2">
+</div>
+
+<div style="padding:7%">
+<div style="text-align:center;padding-top:10vh;font-size:8vmin;line-height:8vmin">
+<b>{{schoolname}}</b></div>
+<a style="color:white;text-decoration:none" href="tel:+1-{{schoolnumber}}">
+<div style="text-align:center;font-size:4vmin;line-height:4.3vmin;padding-top:3vmin">
+Emergency Number in Database:
+<div style="padding-top:2vmin;font-size:7vmin;line-height:7vmin;padding-bottom:1vmin;"><b>{{schoolnumber}}  </b><span style="margin-top:-1vmin !important;font-size:7vmin !important;position:absolute;right:16vw" ng-class="{'balanced': schoolstatus=='emergency', 'energized': schoolstatus=='non-emergency','positive':schoolstatus=='admin'}" class="item-note icon-large ion-ios-circle-filled animated pulse infinite"></span>
+</div>
+<div style="font-size:4vmin" ng-show=schoolstatus=='emergency' class="balanced">
+<b>Emergency Hotline</b>
+</div>
+<div style="font-size:4vmin" ng-show=schoolstatus=='non-emergency' class="energized">
+<b>Non-Emergency Phone</b>
+</div>
+<div style="font-size:4vmin" ng-show=schoolstatus=='admin' class="positive">
+<b>Administrative Number</b>
+</div>
+</div>
+</a>
+<div style="font-size:4.5vmin;line-height:5.5vmin;padding-top:5vmin">
+<b>{{schoolname}}</b> will be phoned during an emergency if you are within the red boundary. 
+
+</div>
+
+      <div id="map" style="position:absolute;bottom:5vh;opacity:.9"></div>
+
+</div>
+</ion-view>

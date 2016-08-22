@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<!--Author @ccj242 - Christopher Cinq-Mars Jarvis -->
+
+<html>
+  <head>
+
+  <!-- comment out? 
+  Access-Control-Allow-Origin: *
+  -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <!-- CAUSING ISSUES with ng-avatar
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    -->
+    <title>PhoneFlare</title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+
+
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <script src="lib/ng-cordova-bluetoothle/ng-cordova-bluetoothle.js"></script>
+    
+    <!--ngstorage-->
+    
+<script src="js/ngStorage.min.js"></script>
+  <script src="js/ngletteravatar.js"></script>
+
+<script src="lib/templates.js"></script>
+    <script src="cordova.js"></script>
+    <!--
+  <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+  -->
+    <!---->
+<script src="js/ng-cordova.min.js"></script>
+
+    <!-- 
+    <script src="js/jquery-2.1.3.min.js"></script>
+  -->
+    <script src="js/angular-resource.js"></script>
+    <script src="js/lb-services.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+
+<!--Add your own API key -->
+    <script src="http://maps.googleapis.com/maps/api/js?key=YOURKEYHERE"></script>
+
+  </head>
+
+  <body ng-app="flare"> 
+
+
+<!--Menu-->
+  <ion-side-menus ng-controller="StandardCtrl">
+  <ion-side-menu-content drag-content="false">
+
+  <ion-nav-view>
+
+    </ion-nav-view>
+
+
+
+<!--Menu Items-->
+
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-stable menulist menuupperleft">
+      <h1 style="padding-left:18px" class="title">Phone<b>Flare</b></h1>
+    </ion-header-bar>
+    <ion-content class="menulist" >   
+
+     <div id="menulist">
+      <ion-list>
+     <div class="item item-divider">
+         Settings
+          </div>
+        <ion-item menu-close ng-click="toggleLeft()" ui-sref="options" style="padding-right:50px">
+         
+          Options
+           <span class="item-note ion-android-options"></span>
+          
+        </ion-item>
+        <!--
+         <ion-item menu-close ng-if=campusstatus=='n/a' ng-click="toggleLeft()" ui-sref="options" style="padding-right:50px">
+          
+           <span class="item-note ion-android-options"></span>
+         </ion-item>
+-->
+         <ion-item ng-click="campussafety()" ng-show="global.campuscall" menu-close style="padding-right:50px">
+          Campus Safety
+        
+          <span ng-class="{'balanced ion-ios-circle-filled animated pulse infinite': campusstatus=='green', 'energized ion-ios-circle-filled animated pulse infinite': campusstatus=='yellow','positive ion-ios-circle-filled animated pulse infinite':campusstatus=='red'}" class="item-note icon-large" class="item-note icon-large ion-ios-circle-filled animated pulse infinite"></span>
+        </ion-item>
+      
+             <div class="item item-divider">
+         About
+          </div>
+           <ion-item  menu-close ng-click="infobutton()">
+         
+          Tutorial
+          <span style="padding-right:37px" class="item-note ion-help"></span>
+        </ion-item>
+           <ion-item nav-clear menu-close ng-click="watchvideo()">
+          Video Demo
+          <span style="padding-right:33px" class="item-note ion-social-youtube-outline"></span>
+        </ion-item>
+       
+        
+          <div class="item item-divider">
+         Other
+          </div>
+            <ion-item style="padding-right:50px" menu-close ng-click="toggleLeft()" ui-sref="projects">
+          Projects
+          <span class="item-note ion-earth"></span>
+        </ion-item>
+              <ion-item ng-click="feedback()" style="padding-right:50px">
+          Feedback
+          <span class="item-note ion-bug"></span>
+        </ion-item>
+         <div class="item item-divider">
+         Connect
+          </div>
+  <div style="text-align:center;padding-top:10px">
+
+
+      <img ng-click="facebook()" src="img/2.svg" class="pointer" style="width:13vw">
+      <img ng-click="twitter()" src="img/1.svg" class="pointer" style="width:13vw">
+      <img ng-click="stumbleupon()" class="pointer" src="img/3.svg" style="width:13vw">
+      
+      <img ng-click="github()" class="pointer" src="img/github.svg" style="width:13vw">
+      
+
+      </div>
+     
+<div style="text-align:center;padding-top:0px">
+      <button class="button button-balanced button-full ion-heart" ng-click="volunteer()"><b> Volunteer</b></button>
+</div>
+<div class="padding" ng-click="lastinfo()" menu-close style="text-align:center;padding-top:0px;font-size:10px;line-height:10px">
+    <b>PhoneFlare</b> is a certified 403c non-profit that relies on volunteers and contributions. It is <b>open-source</b> and <b>free</b>.
+</div>
+   
+      </ion-list>
+      <div>
+      
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
+   
+
+  </body>
+</html>

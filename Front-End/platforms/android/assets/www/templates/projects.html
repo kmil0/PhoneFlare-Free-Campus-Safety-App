@@ -1,0 +1,146 @@
+       <ion-nav-bar class="bar-positive menu-bar">
+<ion-nav-title>
+      Projects
+    </ion-nav-title> 
+
+<ion-nav-buttons side="left">
+
+<div id="backbutton">
+        <button style="text-align:left" ng-click="back()" class="button button-icon icon ion-chevron-left" > </button>
+</div>
+
+      </ion-nav-buttons>
+  <ion-nav-buttons side="right" >
+
+      <button class="button button-icon button-clear" on-touch="socialsharing()" ng-class="{'ion-ios-upload-outline': iOS, 'ion-android-share-alt': !iOS}">
+        </button>
+
+    </ion-nav-buttons>
+
+</ion-nav-bar>
+
+
+    <ion-view title="Projects" style="margin:0 0px" class="flarebackground23">
+    
+    <ion-content has-header="true" class="options has-header">
+
+    <div class="item item-divider" style="font-size:17px">
+<b>All Free and Non-Profit</b>
+
+<span style="float:right;color:white;font-size:13px" ng-click="cinq()"><b><u>More Info</b></u></span>
+
+</div>
+
+<div class="padding" ng-click="synonymy()">
+<img style="width:25%" src='img/256.png'>
+<div style="width:70%;float:right;padding-top:2vh;font-size:4vmin;line-height:5vmin">
+<b style="font-size:5.5vmin">Synonymy   </b>
+<div style="padding-top:.5vh">
+A non-profit, educational word game narrated by <b>Richard Dawkins</b>
+</div>
+</div>
+ </div>
+
+ <div class="padding" ng-click="birds()">
+<img style="width:25%" ng-src='img/birds.png'>
+<div style="width:70%;float:right;padding-top:2vh;font-size:4vmin;line-height:5vmin">
+<b style="font-size:5.5vmin">The Birds Upstairs </b>
+<div style="padding-top:.5vh">
+Student Academy Award nominated animated <b>short film</b>
+</div>
+</div>
+ </div>
+
+ <div class="padding" ng-show="SMSTactics" ng-click="smstactics()">
+<img style="width:25%" ng-src='img/SMS_Tactics2.png'>
+<div style="width:70%;float:right;padding-top:2vh;font-size:4vmin;line-height:5vmin">
+<b style="font-size:5.5vmin">SMS Tactics </b>
+<div style="padding-top:.5vh">
+An <b>experimental</b> texting game about manipulation and trust.
+</div>
+</div>
+ </div>
+
+ <div class="padding" ng-click="wordunk()">
+<img style="width:25%" ng-src='img/wordunknown.png'>
+<div style="width:70%;float:right;padding-top:2vh;font-size:4vmin;line-height:5vmin">
+<b style="font-size:5.5vmin">Word Unknown   </b>
+<div style="padding-top:.5vh">
+An elegant and addictive mix of hangman and mastermind. 
+</div>
+</div>
+ </div>
+
+ <div class="padding" ng-click="iconic()">
+<img style="width:25%" ng-src='img/Iconic.png'>
+<div style="width:70%;float:right;padding-top:2vh;font-size:4vmin;line-height:5vmin">
+<b style="font-size:5.5vmin">Iconic Passwords  </b>
+<div style="padding-top:.5vh">
+An innovative <b>password</b> management system.
+</div>
+</div>
+ </div>
+
+   <div class="padding" ng-click="tmm()">
+<img style="width:25%" ng-src='img/example.png'>
+<div style="width:70%;float:right;padding-top:2vh;font-size:4vmin;line-height:5vmin">
+<b style="font-size:5.5vmin">TypeMyMusic   </b>
+<div style="padding-top:.5vh">
+A free and easy to use music notation <b>font</b>. 
+</div>
+</div>
+ </div>
+
+
+<div class="item item-divider" style="font-size:17px">
+<b>Credits</b>
+<span ng-click="credits()" style="color:white;font-size:13px;float:right"><b><u>See Full List</u></b>
+</span>
+</div>
+
+
+ <div class="padding" ng-click="me()">
+<img style="width:25%" ng-src='img/me.png'>
+<div style="width:70%;float:right;padding-top:2vh;font-size:4vmin;line-height:5vmin">
+<b style="font-size:5.5vmin">Christopher Jarvis  </b>
+<div style="padding-top:.5vh">
+Designer, <b>Manager</b> and Front-End Developer
+</div>
+</div>
+ </div>
+
+ <div class="padding" ng-click="jon()">
+<img style="width:25%" ng-src='img/jon.png'>
+<div style="width:70%;float:right;padding-top:2vh;font-size:4vmin;line-height:5vmin">
+<b style="font-size:5.5vmin">Jonathan Chin   </b>
+<div style="padding-top:.5vh">
+Back-end & Java development, Project <b>Engineer</b>
+</div>
+</div>
+ </div>
+
+  <div class="padding" ng-click="michelle()">
+<img style="width:25%" ng-src='img/michelle.png'>
+<div style="width:70%;float:right;padding-top:2vh;font-size:4vmin;line-height:5vmin">
+<b style="font-size:5.5vmin">Michelle Trachtenberg   </b>
+<div style="padding-top:.5vh">
+Narrator and Voice when calling <b>campus</b> dispatch
+</div>
+</div>
+ </div>
+
+
+ <div class="padding" ng-click="volunteer()">
+<img style="width:25%" ng-src='img/you.png'>
+<div style="width:70%;float:right;padding-top:2vh;font-size:4vmin;line-height:5vmin">
+<b style="font-size:5.5vmin">You!  </b>
+<div style="padding-top:.5vh">
+There are tons of ways to contribute and volunteer with <b>PhoneFlare</b> 
+</div>
+</div>
+ </div>
+      </ion-content>
+
+  </ion-view>
+
+

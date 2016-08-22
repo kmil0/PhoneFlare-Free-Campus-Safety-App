@@ -1,0 +1,80 @@
+<!--Author @ccj242 - Christopher Cinq-Mars Jarvis -->
+
+<ion-view hide-nav-bar="true" cache-view="false" ng-init="initiate()" class="flarebackground15">
+
+<!--
+<img style="height:100%;min-width:100%;position:absolute;left:-38%;opacity:.2" src="img/splash.jpg">
+-->
+<div ng-if="emergencycase" class = "animated swing infinite" style="text-align:center">
+<i class = "ion-android-notifications" style="font-size:410px;opacity: 0.2;"></i>
+</div>
+   <ion-content has-bouncing="false">
+
+<div style="font-size:5vmin;text-align:center;padding-top:6vh;line-height:3.5vmin" class="padding" ng-if="emergencycase" ng-cloak><b>
+You are currently in an Emergency!</b>
+<div id="disarholder" ng-if="!fake" style="font-size:4vmin;margin-top:8px"><b>Hold</b> the button below to check-in and let others know you're ok.</div>
+<div ng-if="fake" style="font-size:4vmin;margin-top:8px" class="animated pulse infinite">Hold the <b>correct color</b> to disarm, otherwise your contacts will secretly be notified. </div>
+</div>
+
+<div style="font-size:5vmin;text-align:center;padding-top:6vh" class="padding" ng-if="!emergencycase" ng-cloak ><b>
+It's time to Check-In with PhoneFlare!</b>
+<div id="holder" style="font-size:4vmin;padding-top:1vmin"><b>Hold</b> the button below to check-in</div>
+</div>
+<br>
+<div ng-if="emergencycase && !fake" style="text-align:center;padding-bottom:2vh" ng-cloak>
+<button class="button button-balanced animated pulse infinite" style="font-size:15vmin;width:60vmin;height:60vmin;border-radius:200px" on-long-press="deescalate()" ng-click="disarprompt()">
+  I'm <b>OK</b>!
+</button>
+</div>
+<div ng-if="!emergencycase" style="text-align:center;padding-bottom:2vh" ng-cloak>
+<button class="button button-royal" style="font-size:12vmin;width:60vmin;height:60vmin;border-radius:200px" on-long-press="deescalate()" ng-click="checkinprompt()">
+  Check-<b>In</b>
+</button>
+</div>
+
+<!-- -->
+<div ng-if="emergencycase && fake" style="text-align:center;margin-top:-20px;margin-bottom:-30px" ng-cloak>
+
+<div style="text-align:center;bottom:-20px">
+<button class="button button-balanced" style="font-size:11vmin;width:45vmin;height:45vmin;border-radius:200px;margin-bottom:-15px" on-long-press="green()">
+  <b>disarm</b>
+</button>
+</div>
+
+<button class="button button-energized" style="font-size:11vmin;width:45vmin;height:45vmin;border-radius:200px" on-long-press="yellow()">
+  <b>disarm</b>
+</button>
+
+<button class="button button-royal" style="font-size:11vmin;width:45vmin;height:45vmin;border-radius:200px" on-long-press="purple()">
+   <b>disarm</b>
+</button>
+
+</div>
+
+<!--- -->
+
+<br><div style="text-align:center;font-size:30px;padding-bottom:2vh">OR</div><br>
+
+<div style="text-align:center" ng-if="emergencycase" ng-cloak>
+<a href="tel:+1-911" ng-click="bluetoothsnoop()">
+<button class="button button-positive" style="font-size:15vmin;width:40vmin;height:40vmin;border-radius:200px">
+ <b style="padding-top:100px !important">911</b>
+ </button>
+</a>
+<br><br>
+Tap above to call Emergency Services
+</div>
+
+<div style="text-align:center" ng-if="!emergencycase" ng-cloak>
+<button ng-click="UpgradeEmergency()" class="button button-positive" style="font-size:10vmin;width:40vmin;height:40vmin;border-radius:200px">
+ <b> help!</b>
+</button>
+<br><br>
+Tap above to Initiate an <b>Emergency Event</b>
+</div>
+
+</div>
+    </ion-content>
+
+  </ion-view>
+

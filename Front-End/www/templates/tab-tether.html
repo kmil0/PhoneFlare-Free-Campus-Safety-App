@@ -1,0 +1,79 @@
+<!--Author @ccj242 - Christopher Cinq-Mars Jarvis -->
+
+<ion-nav-bar class="bar-positive menu-bar">
+<ion-nav-title>
+      Tether
+    </ion-nav-title>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-large button-icon button-clear ion-navicon-round" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+  
+  <ion-nav-buttons side="right">
+
+        <button class="button button-icon button-clear" on-touch="socialsharing()" ng-class="{'ion-ios-upload-outline': iOS, 'ion-android-share-alt': !iOS}">
+        </button>
+  
+      </ion-nav-buttons>
+      
+
+    </ion-nav-bar>
+
+
+
+<ion-view view-title="Tether" class="flarebackground15">
+
+
+
+<div class="animated bounceInUp">
+<i class = "ion-ios-wineglass" style="font-size:600px;opacity: 0.1;"></i>
+</div>
+      <ion-content class="has-header" has-header="true" padding="true">
+
+
+
+<!--
+<i class="ion-ios-checkmark-outline" style="font-size:200px"></i>
+Headphones Connected
+
+-->
+<!--IT'S JUMPING??? -->
+<div style="text-align:center;padding-top:7vh;font-weight:bold">
+  <button ng-click="tetherarmrouter()" class="button" style="font-size:15vmin;width:55vmin;height:55vmin;border-radius:200px" ng-class="{'button-positive disarm': tetherarmstate, 'button-tetherarm arm': !tetherarmstate}">
+</button>
+</div>
+
+<div style="font-size:6.5vmin;line-height:6.5vmin;padding-top:10vh;text-align:center" ng-if="!tetherarmstate" ng-cloak>
+Connect headphones or an accessory and hit the <b>arm</b> button above to prime your device for an emergency.
+
+ </div>
+
+<div style="font-size:6.5vmin;line-height:6.5vmin;padding-top:7vh;text-align:center" ng-if="tetherarmstate" ng-cloak>
+
+<div ng-if="bluetoothdisabled" ng-click="bluetoothprompt()" style="font-size:3.5vmin;padding-bottom:2vh;text-align:center" class="animated pulse" ng-cloak> Enable <span style="font-size:4vmin" class="ion-bluetooth"></span> for <b>UDID logging</b> during emergencies</div>
+
+Your device is primed. If your accessory is removed, your contacts will be notified. Use <b>disarm</b> above to stop.
+
+ </div>
+
+
+<!--
+ 
+ng-class="{'': contact.sendmail, 'toggle-off': !contact.sendmail}"
+
+
+
+
+ <button ng-click="tetherarm()" ng-hide=!tetherarmstate class="button button-full button-royal">
+Arm
+</button>
+
+ng-class="{'button-full button-assertive': !tetherarmstate, 'button-full button-royal': tetherarmstate}"
+
+
+-->
+ 
+  </ion-content>
+</ion-view>
+
